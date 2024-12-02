@@ -1,4 +1,7 @@
 {pkgs ? import <nixpkgs> {}, ...}: rec {
+  lyrics = pkgs.python3Packages.callPackage ./lyrics {};
+  hyprbars = pkgs.callPackage ./hyprbars {};
+
   # My wallpaper collection
   wallpapers = import ./wallpapers {inherit pkgs;};
   allWallpapers = pkgs.linkFarmFromDrvs "wallpapers" (pkgs.lib.attrValues wallpapers);
