@@ -4,7 +4,6 @@
   pkgs,
   config,
   outputs,
-  default,
   ...
 }: {
   imports =
@@ -36,7 +35,7 @@
   home = {
     username = lib.mkDefault "saiful";
     homeDirectory = lib.mkDefault "/home/${config.home.username}";
-    stateVersion = lib.mkDefault "${default.stateVersion}";
+    stateVersion = lib.mkDefault "${config.system.stateVersion}";
     sessionPath = ["$HOME/.local/bin"];
     sessionVariables = {
       FLAKE = "$HOME/Documents/NixConfig";

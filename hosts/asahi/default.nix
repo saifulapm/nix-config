@@ -1,7 +1,6 @@
 {
   pkgs,
   inputs,
-  default,
   ...
 }: {
   imports = [
@@ -50,5 +49,5 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
 
-  system.stateVersion = "${default.stateVersion}";
+  system.stateVersion = "25.05";
 }

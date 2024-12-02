@@ -26,10 +26,6 @@
   outputs = { self, nixpkgs, home-manager, systems, ... } @inputs:
     let
       inherit (self) outputs;
-      default = {
-        # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-        stateVersion = "25.05";
-      };
       lib = nixpkgs.lib // home-manager.lib;
       forEachSystem = f: lib.genAttrs (import systems) (system: f pkgsFor.${system});
       pkgsFor = lib.genAttrs (import systems) (
@@ -41,7 +37,7 @@
       );
       mkNixos = modules: lib.nixosSystem {
         inherit modules;
-        specialArgs = { inherit inputs outputs self default; };
+        specialArgs = { inherit inputs outputs self; };
       };
 
       # mkDarwin = system: modules: inputs.darwin.lib.darwinSystem {
@@ -51,7 +47,7 @@
 
       mkHome = modules: pkgs: lib.homeManagerConfiguration {
         inherit modules pkgs;
-        extraSpecialArgs = { inherit inputs outputs self default; };
+        extraSpecialArgs = { inherit inputs outputs self; };
       };
     in {
       inherit lib;
