@@ -24,7 +24,6 @@
 
   networking = {
     hostName = "asahi";
-    useDHCP = true;
     wireless.iwd = {
       enable = true;
       settings.General.EnableNetworkConfiguration = true;
