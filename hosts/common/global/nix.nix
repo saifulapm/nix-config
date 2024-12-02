@@ -15,16 +15,11 @@
     nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
 
     settings = {
-      # binary caches
-      substituters = [];
-      trusted-public-keys = [];
-
       trusted-users = ["root" "@wheel"];
       auto-optimise-store = true;
       experimental-features = [
         "nix-command"
         "flakes"
-        # "ca-derivations"  # Optional, can be added later if needed
       ];
     };
     gc = {
