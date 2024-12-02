@@ -3,6 +3,8 @@
   wallpapers = import ./wallpapers {inherit pkgs;};
   allWallpapers = pkgs.linkFarmFromDrvs "wallpapers" (pkgs.lib.attrValues wallpapers);
 
+  pass-wofi = pkgs.callPackage ./pass-wofi {};
+
   # And colorschemes based on it
   generateColorscheme = import ./colorschemes/generator.nix {inherit pkgs;};
   colorschemes = import ./colorschemes {inherit pkgs wallpapers generateColorscheme;};
