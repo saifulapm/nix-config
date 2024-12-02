@@ -23,9 +23,9 @@
     # ];
   };
 
-  programs.ssh = {
-    enable = true;
-  };
+  # programs.ssh = {
+  #   enable = true;
+  # };
 
   # Passwordless sudo when SSH'ing with keys
   # security.pam.sshAgentAuth = {
