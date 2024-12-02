@@ -43,7 +43,7 @@
   hardware.asahi.useExperimentalGPUDriver = true;
   hardware.asahi.experimentalGPUInstallMode = "replace";
   hardware.asahi.setupAsahiSound = true;
-  hardware.asahi.extractPeripheralFirmware = false;
+  hardware.asahi.peripheralFirmwareDirectory = ./firmware;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
