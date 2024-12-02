@@ -3,6 +3,7 @@
   outputs,
   lib,
   inputs,
+  config,
   ...
 }: {
   nix = {
