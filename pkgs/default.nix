@@ -8,6 +8,8 @@
 
   pass-wofi = pkgs.callPackage ./pass-wofi {};
 
+  plymouth-spinner-monochrome = pkgs.callPackage ./plymouth-spinner-monochrome {};
+
   # And colorschemes based on it
   generateColorscheme = import ./colorschemes/generator.nix {inherit pkgs;};
   colorschemes = import ./colorschemes {inherit pkgs wallpapers generateColorscheme;};
