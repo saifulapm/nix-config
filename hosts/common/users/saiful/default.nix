@@ -8,6 +8,7 @@
 in {
   users.mutableUsers = false;
   users.users.saiful = {
+    allowNoPasswordLogin = true;
     isNormalUser = true;
     shell = pkgs.fish;
     extraGroups = ifTheyExist [
