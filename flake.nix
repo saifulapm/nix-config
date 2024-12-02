@@ -28,7 +28,7 @@
       inherit (self) outputs;
       default = {
         # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-        stateVersion = "22.11";
+        stateVersion = "25.05";
       };
       lib = nixpkgs.lib // home-manager.lib;
       forEachSystem = f: lib.genAttrs (import systems) (system: f pkgsFor.${system});
